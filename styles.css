@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #be59a1, #eee3db);
+  color: #2b2b2b;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.yes {
+  background-color: #e94b6a;
+  color: white;
+}
+
+button.yes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(233, 75, 106, 0.4);
+}
+
+button.no {
+  background-color: #f0e6f6;
+  color: #555;
+  border: 1px solid #d4b8e0;
+  transition: all 0.3s ease, left 0.3s ease, top 0.3s ease;
+}
+
+button.no.dimmed {
+  opacity: 0.4;
+}
+
+.result {
+  margin-top: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.final-message {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* Decorative images */
+.deco {
+  position: fixed;
+  width: 120px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco-top-left {
+  top: 5%;
+  left: 4%;
+  animation: tiltLeft 3s ease-in-out infinite alternate;
+}
+
+.deco-top-right {
+  top: 5%;
+  right: 4%;
+  animation: tiltRight 3.5s ease-in-out infinite alternate;
+}
+
+.deco-bottom {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes tiltLeft {
+  from { transform: rotate(-6deg) scale(1); }
+  to   { transform: rotate(6deg) scale(1.05); }
+}
+
+@keyframes tiltRight {
+  from { transform: rotate(5deg) scale(1); }
+  to   { transform: rotate(-5deg) scale(1.08); }
+}
+
+@keyframes pulse {
+  from { transform: translateX(-50%) scale(1); opacity: 0.85; }
+  to   { transform: translateX(-50%) scale(1.1); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-2deg); }
+  40% { transform: translateX(8px) rotate(2deg); }
+  60% { transform: translateX(-6px) rotate(-1deg); }
+  80% { transform: translateX(6px) rotate(1deg); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
