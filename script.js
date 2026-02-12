@@ -14,6 +14,8 @@ let noClicked = 0;
 // Sí
 yesBtn.addEventListener("click", () => {
   buttons.style.display = "none";
+  subtitle.remove();
+  noBtn.remove();
 
   // Update result message based on noClicked state
   const finalMsg = document.querySelector(".final-message");
@@ -22,7 +24,6 @@ yesBtn.addEventListener("click", () => {
   } else if (noClicked >= 1 && noClicked <= 7) {
     finalMsg.innerHTML = `¡Nice, aun faltan ${8 - noClicked} cambios en el boton de "No" ! <br>Pero gracias por decir que sí :3. 💕`;
   } else if (noClicked >= 8) {
-    subtitle.remove();
     finalMsg.innerHTML = "¡Dijiste que no muchas veces, demasiadas veceeees!<br>Pero al final dijiste que sí… y eso es lo que importa mi amor de mi alma, preciosa!. 💖";
   }
 
