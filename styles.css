@@ -10,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Segoe UI", system-ui, sans-serif;
-  background: linear-gradient(135deg, #be59a1, #eee3db);
+  background: linear-gradient(135deg, #eb8ecf, #eee3db);
   color: #2b2b2b;
 }
 
@@ -85,7 +85,7 @@ button.no.dimmed {
 /* Decorative images */
 .deco {
   position: fixed;
-  width: 120px;
+  width: 250px;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -105,11 +105,16 @@ button.no.dimmed {
   animation: tiltRight 3.5s ease-in-out infinite alternate;
 }
 
-.deco-bottom {
+.deco-bottom-right {
   bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: pulse 2.5s ease-in-out infinite alternate;
+  right: 4%;
+  animation: tiltRight 2.5s ease-in-out infinite alternate;
+}
+
+.deco-bottom-left {
+  bottom: 5%;
+  left: 4%;
+  animation: tiltLeft 2.8s ease-in-out infinite alternate;
 }
 
 @keyframes tiltLeft {
